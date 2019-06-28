@@ -1,0 +1,194 @@
+
+
+@font-face {
+  font-family: 'MyriadPro_Regular';
+  src: url('../font/MyriadPro-Regular.eot');
+  src: url('../font/MyriadPro-Regular.eot') format('embedded-opentype'),
+  url('../font/MyriadPro-Regular.woff2') format('woff2'),
+  url('../font/MyriadPro-Regular.woff') format('woff'),
+  url('../font/MyriadPro-Regular.ttf') format('truetype'),
+  url('../font/MyriadPro-Regular.svg#MyriadProRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'PingFangSC_Regular';
+  src: url('../font/PingFang-SC-Regular.eot');
+  src: url('../font/PingFang-SC-Regular.eot') format('embedded-opentype'),
+  url('../font/PingFang-SC-Regular.woff2') format('woff2'),
+  url('../font/PingFang-SC-Regular.woff') format('woff'),
+  url('../font/PingFang-SC-Regular.ttf') format('truetype'),
+  url('../font/PingFang-SC-Regular.svg#PingFangSCRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'PingFangSC_Light';
+  src: url('../font/PingFang-SC-Light.eot');
+  src: url('../font/PingFang-SC-Light.eot') format('embedded-opentype'),
+  url('../font/PingFang-SC-Light.woff2') format('woff2'),
+  url('../font/PingFang-SC-Light.woff') format('woff'),
+  url('../font/PingFang-SC-Light.ttf') format('truetype'),
+  url('../font/PingFang-SC-Light.svg#weui') format('svg');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+iframe{
+  width: 170vh;
+  height: 74vh;
+}
+#content {
+  margin: 5.092592vh auto;
+}
+
+.rise {
+  position: relative;
+}
+
+.rise span {
+  font-family: 'PingFangSC_Regular';
+  position: absolute;
+  left: 7.870370vh;
+  top: -1.3vh;
+  color: #FFFFFF;
+  font-size: 2.222222vh;
+}
+
+.rise i {
+  background-image: url('../img/BarFrame.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 180px;
+}
+
+.category {
+  font-size: 1.333333vh;
+  color: #9fceff;
+}
+
+.MORE {
+  text-align: right;
+  color: #2acaff;
+}
+
+
+
+
+/* tab页面 */
+* {
+  box-sizing: border-box;
+	margin:0;
+	padding: 0;
+}
+
+.App {
+  width: 169.602vh;
+  margin: auto;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+
+.App-rise {
+  width: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.ProjectRise {
+  width: 174.537073vh;
+  height: 6.944444vh;
+  padding: 1.571303vw 3% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 1.249633vw;
+  background-image: url(../img/rise.f38458da.png);
+  background-size: 174.537073vh 6.944444vh;
+}
+
+.EntryName {
+  font-size: 2.666666vh !important;
+  margin-top: -0.8vw;
+}
+
+.Days,
+.EntryDate,
+.EntryName {
+  font-family: 'MyriadPro_Regular';
+  color: #94DEF8;
+  font-size: 2.222222vh;
+}
+
+.Days code {
+  color: #33E7EB;
+  font-size: 2.8895vh;
+  padding: 0 0.5vw;
+}
+
+.horizontal {
+  padding: 0;
+  margin: 3.888888vh auto 0;
+  text-align: center;
+}
+
+.horizontal li {
+  width: 21.296296vh;
+  height: 4.166666vh;
+  font-family: 'PingFangSC_Regular';
+  line-height: 3.888888vh;
+  color: #6CD6FE;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2.222222vh;
+  margin: 0 0.5856497vh;
+}
+
+.box-shadow {
+  -moz-box-shadow: 0 0 20px #0662B6 inset;
+  -webkit-box-shadow: 0 0 20px #0662B6 inset;
+  box-shadow: 0 0 10px #0662B6 inset;
+}
+
+.horizontal li.selectActive {
+  background-color: #02679A;
+  color: #fff;
+}
+
+.App-header hr {
+  width: 100%;
+  height: 2px;
+  border: none;
+  margin: 0 auto;
+  background-color: #285d97;
+}
+
+.MenuChild {
+  display: none;
+}
+
+.MenuChild.selectActive {
+  display: block;
+}

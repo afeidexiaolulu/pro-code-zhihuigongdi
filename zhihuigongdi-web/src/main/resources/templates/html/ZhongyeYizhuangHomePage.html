@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/indexStatic/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="/indexStatic/css/ZhongyeYizhuangHomePage.css"/>
+		<link rel="stylesheet" href="/indexStatic/css/swiper.css">
+		<script src="/indexStatic/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/indexStatic/js/echarts.common.min.js"></script>
+		<script src="/indexStatic/js/swiper.min.js"></script>
+		<script src="/indexStatic/js/ZhongyeYizhuangHomePage.js"></script>
+		<style>
+			.gallery-top {
+				height: 51.851851vh;
+				width: 100%;
+			}
+			.gallery-thumbs {
+				height: 17.962962vh;
+				box-sizing: border-box;
+				margin-top: 1.3888888vh;
+			}
+			.gallery-thumbs .swiper-slide {
+				height: 100%;
+				opacity: 0.6;
+				margin-right: 1.388888vh!important;
+			}
+			.gallery-thumbs .swiper-slide-thumb-active {
+				opacity: 1;
+			}
+			.gallery-top img{
+				width: 100%;
+				height: 100%;
+				border: 1px solid #0a56a3;
+			}
+			.gallery-thumbs img{
+				width: 100%;
+				height: 100%;
+				border: 1px solid #1ac6ff;
+			}
+			.swiper-pagination-bullet {
+				background: #fff;
+				opacity: 1;
+			}
+			.swiper-pagination-bullet-active {
+				background: #007aff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ProjectSummary">
+
+			<!-- 左 -->
+			<div class="ProjectSummaryDivOne">
+				<div class="div_1">
+					<div class="rise">
+						<i></i>    
+						<span>项目基本信息</span>
+					</div>
+					<div id="Basic-Project-Information">
+						<p><span class="titleName">项目名称：</span><span class="category" title="北京经济技术开发区河西区X90R1、X90S1地块共有产权住房项目">北京经济技术开发区河西区X90R1、X90S1地块共有产权住房项目</span><span></span></p>
+						<p><span class="titleName">项目类型：</span><span class="category" title="土建项目">新建装配式房屋建筑项目</span><span></span></p>
+						<p><span class="titleName">项目造价：</span><span class="category" title="619975752.61元">619975752.61元</span><span></span></p>
+						<p><span class="titleName">项目规模：</span><span class="category" title="142340.25㎡">142340.25㎡</span><span></span></p>
+						<p><span class="titleName">中标工期：</span><span class="category" title="949日历天">949日历天</span><span></span></p>
+						<p><span class="titleName">建设地点：</span><span class="category" title="亦庄开发区X90R1、X90S1地块">亦庄开发区X90R1、X90S1地块</span><span></span></p>
+					</div>
+				</div>
+				
+				<div class="div_1">
+					<div class="rise">
+						<i></i>    
+						<span>合同总额</span>
+					</div>
+					<div id="Total-Contract-Amount"></div>
+				</div>
+			</div>
+
+			<!-- 中 -->
+			<div class="ProjectSummaryDivTwo">
+				<div class="rise">
+					<i></i>    
+					<span>项目里程碑计划</span>
+				</div>
+				<div class="swiper-container gallery-top">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="/indexStatic/img/1.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/2.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/3.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/4.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/5.jpg"></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next swiper-button-white"></div>
+					<div class="swiper-button-prev swiper-button-white"></div>
+				</div>
+				<div class="swiper-container gallery-thumbs">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="/indexStatic/img/1.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/2.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/3.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/4.jpg"></div>
+						<div class="swiper-slide"><img src="/indexStatic/img/5.jpg"></div>
+					</div>
+				</div>
+					
+			</div>
+
+			<!-- 右 -->
+			<div class="ProjectSummaryDivThree">
+				<div class="div_1">
+					<div class="rise">
+						<i></i>    
+						<span>项目五方责任主体</span>
+					</div>
+						<div id="Project-Five-Party-Responsibility-Body">
+							<p><span class="titleName">施工单位：</span><span class="category" title="中国京冶工程技术有限公司">中国京冶工程技术有限公司</span><span></span></p>
+							<p><span class="titleName">建设单位：</span><span class="category" title="北京博大新元房地产开发有限公司">北京博大新元房地产开发有限公司</span><span></span></p>
+							<p><span class="titleName">监理单位：</span><span class="category" title="北京华达建业工程管理股份有限公司">北京华达建业工程管理股份有限公司</span><span></span></p>
+							<p><span class="titleName">设计单位：</span><span class="category" title="北京维拓时代建筑设计股份有限公司">北京维拓时代建筑设计股份有限公司</span><span></span></p>
+							<p><span class="titleName">勘察单位：</span><span class="category" title="中航勘察设计研究院有限公司">中航勘察设计研究院有限公司</span><span></span></p>
+						</div>
+					</div>
+				<div class="div_1">
+					<div class="rise">
+						<i></i>    
+						<span>项目用时占比</span>
+					</div>
+					<div id="Proportion-project-time"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

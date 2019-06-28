@@ -1,0 +1,56 @@
+#ProjectSummary{
+    width: 100%;
+    
+}
+/* .ProjectSummaryDivOne */
+.ProjectSummaryDivOne{
+    width:44.259259vh;
+    float: left;
+}
+.ProjectSummaryDivThree{
+    width:44.259259vh;
+    float: right;
+}
+.ProjectSummaryDivTwo{
+    width:75vh;
+    height: 73.7vh;
+    float: left;
+    margin: 0 3vh;
+}
+#Basic-Project-Information,#Total-Contract-Amount,#Project-Five-Party-Responsibility-Body,#Proportion-project-time{
+    width: 44.259259vh;
+    height:31.944444vh;
+    border: 1px solid #114976;
+}
+#Basic-Project-Information,#Project-Five-Party-Responsibility-Body{
+    margin-bottom:5.092592vh;
+}
+#Basic-Project-Information,#Project-Five-Party-Responsibility-Body{
+    padding:3.148148vh 2.314814vh;
+}
+#Basic-Project-Information p,#Project-Five-Party-Responsibility-Body p{
+    border-bottom: 1px dotted #0858a6;
+    margin: 0;
+    padding: 1.388888vh 0;
+    font-size: 1.333333vh;
+    color: #9fceff;
+}
+#Basic-Project-Information p:last-child,#Project-Five-Party-Responsibility-Body p:last-child{
+    border-bottom: none;
+}
+#Basic-Project-Information > p > .category,#Project-Five-Party-Responsibility-Body > p > .category{
+    width: 32vh;
+    height: 2vh;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-left: 7.2vh;
+}
+#Basic-Project-Information .titleName,#Project-Five-Party-Responsibility-Body .titleName{
+    display: inline-block;
+    width: 7vh;
+    height: 2vh;
+    position: absolute;
+}

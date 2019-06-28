@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="stylesheet" href="/thy/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/thy/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/thy/css/main.css">
+	<link rel="stylesheet" href="/thy/css/doc.min.css">
+	<style>
+	.tree li {
+        list-style-type: none;
+		cursor:pointer;
+	}
+	</style>
+  </head>
+
+  <body>
+
+    <nav th:replace="adminIndex::navId"  class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+			<div class="tree" th:insert="adminIndex::daohang">
+			</div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<ol class="breadcrumb">
+					<li><a href="/admin/toAdminIndex">首页</a></li>
+					<li><a href="/admin/toRegPersonnel">数据列表</a></li>
+					<li class="active">更新</li>
+				</ol>
+			<div class="panel panel-default">
+              <div class="panel-heading">表单数据<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
+			  <div class="panel-body">
+				<form role="form">
+                    <div class="form-group">
+                        <input type="text" hidden id="id" th:value="${rP.id }" placeholder="请输入员工编号">
+                    </div>
+				  <div class="form-group">
+					<label for="serialNumber">员工编号</label>
+					<input type="text" class="form-control" id="serialNumber" th:value="${rP.serialNumber }" placeholder="请输入员工编号">
+				  </div>
+				  <div class="form-group">
+					<label for="name">工人姓名</label>
+					<input type="text" class="form-control" id="name"  th:value="${rP.name }" placeholder="请输入姓名">
+				  </div>
+				  <div class="form-group">
+					<label for="sex">工人性别</label>
+					  <select id = "sex" class="form-control">
+						  <option value="男">男</option>
+						  <option value="女">女</option>
+					  </select>
+				  </div>
+				  <div class="form-group">
+					<label for="age">年龄</label>
+					<input type="text" class="form-control" id="age" th:value="${rP.age }" placeholder="请输入年龄">
+				  </div>
+				  <div class="form-group">
+					<label for="phoneNumber">手机号码</label>
+					<input type="text" class="form-control" id="phoneNumber" th:value="${rP.phoneNumber }" placeholder="请输入手机号码">
+				  </div>
+				  <div class="form-group">
+					<label for="identityNumber">身份证号</label>
+					<input type="text" class="form-control" id="identityNumber" th:value="${rP.identityNumber }" placeholder="请输入身份证号码">
+				  </div>
+				  <div class="form-group">
+					<label for="belongCompany">所属公司</label>
+					<input type="text" class="form-control" id="belongCompany" th:value="${rP.belongCompany }" placeholder="请输入所属公司">
+				  </div>
+				  <div class="form-group">
+					<label for="technicalGrade">技术等级</label>
+					<input type="text" class="form-control" id="technicalGrade" th:value="${rP.technicalGrade }" placeholder="请输入技术等级">
+				  </div>
+				  <div class="form-group">
+					  <label for="statu">在职状态</label>
+					  <select id = "statu" class="form-control">
+						  <option value="激活">激活</option>
+						  <option value="黑名单">黑名单</option>
+					  </select>
+				  </div>
+				  <button type="button" class="btn btn-success" onclick="RegPersonnelUpdate()"><i class="glyphicon glyphicon-plus"></i> 更新 </button>
+				</form>
+			  </div>
+			</div>
+        </div>
+      </div>
+    </div>
+    <script src="/thy/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/thy/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/thy/script/docs.min.js"></script>
+	<script src="/thy/jquery/layer/layer.js"></script>
+	<script src="/js/RegPersonnelUpdate.js"></script>
+  </body>
+</html>

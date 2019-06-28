@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/indexStatic/css/index.css"/>
+	<script src="/indexStatic/js/jquery-1.7.1.min.js"></script>
+	<script src="/indexStatic/js/base.js"></script>
+	<script src="/indexStatic/js/tab.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/indexStatic/js/jquerysession.js"></script>
+	<script src="/indexStatic/js/My97DatePicker/WdatePicker.js"></script>
+	<style>
+		body {
+		  margin: 0;
+		  font-family: 'PingFangSC_Regular', "Segoe UI", "Roboto", "Oxygen",
+		    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		    sans-serif;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale;
+		  background: -webkit-linear-gradient(#1B2339, #004AA3);
+		  /* Safari 5.1 - 6.0 */
+		  background: -o-linear-gradient(#1B2339, #004AA3);
+		  /* Opera 11.1 - 12.0 */
+		  background: -moz-linear-gradient(#1B2339, #004AA3);
+		  /* Firefox 3.6 - 15 */
+		  background: linear-gradient(#1B2339, #004AA3);
+		  /* 标准的语法 */
+		  width: 100vw;
+		  height: 100vh;
+		}
+	</style>
+	<script>
+		$(function () {
+			loadTab()
+		})
+	</script>
+</head>
+
+<body>
+	<p class="ProjectRise">
+		<span class="Days">安全生产<code>105</code>天</span>
+		<span class="EntryName">中冶亦庄×90R1,S1地块项目</span>
+		<span class="EntryDate"></span>
+	</p>
+	<div class="App">
+		<div class="App-header">
+			<ul class="horizontal">
+				<li class="box-shadow" name="ZhongyeYizhuangHomePage">项目概要</li>
+				<li class="box-shadow" name="PartyBuildingColumn">党建专栏</li>
+				<li class="box-shadow" name="BIMManagementCenter">BIM管理中心</li>
+				<li class="box-shadow" name="LaborPersonnelManagement">劳务人员管理</li>
+				<li class="box-shadow" name="VideoSurveillance">全景视频监控</li>
+				<li class="box-shadow" name="EnvironmentalMonitoringCenter">环境监测中心</li>
+			</ul>
+			<hr />
+		</div>
+		<div id="content"  class="content">
+			
+		</div>
+	</div>
+
+	<script>
+		$.ajax({
+			url: getRootPath() + '/index/queryDaysOfSafetyInProduction',
+			dataType: 'json',
+			cache: false,
+			type: 'get',
+			success: function(data){
+				$(".Days > code").html(data.daysOfSafetyInProduction);
+				$(".EntryName").html(data.projectName);
+				$(".EntryDate").html(dateFormat(new Date(), "yyyy-MM-dd"));
+			},
+			error:function(){
+				$(".Days > code").html("数据请求失败!");
+				$(".EntryName").html("数据请求失败!");
+			}
+		})
+
+
+	</script>
+</body>
+
+</html>

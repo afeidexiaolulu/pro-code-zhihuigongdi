@@ -1,0 +1,89 @@
+.EnvironmentalMonitoringCenterDivOne{
+    width: 44.259259vh;
+    float: left;
+}
+.EnvironmentalMonitoringCenterDivTwo{
+    width: 74.074074vh;
+    float: left;
+    margin-left: 3.555555vh;
+}
+.marginB{
+    margin-bottom: 5.092592vh;
+}
+.EnvironmentalMonitoringCenterDivThree{
+    width: 44.259259vh;
+    float: right;
+}
+.MonitoringEarlyWarning,.AQIIndexConstructionSite{
+    padding: 3.148148vh 2.314814vh;
+    margin-bottom: 5.092592vh;
+    height: 31.944444vh;
+    border: 1px solid #114976;
+}
+.MonitoringEarlyWarning p {
+    border-bottom: 1px dotted #094687;
+    margin: 0;
+    padding: 1.388888vh 0;
+}
+.MonitoringEarlyWarning p:last-child{
+    border-bottom: none;
+}
+
+#Analysis-Wind-Speed-Indicators,#Project-Level-Analysis,#Air-Quality-Grade,#Analysis-Module{
+    height: 31.944444vh;
+    border: 1px solid #114976;
+}
+#Analysis-Wind-Speed-Indicators,#Project-Level-Analysis{
+    width: 44.259259vh;
+}
+#Air-Quality-Grade{
+    width: 74.074074vh;
+}
+#Analysis-Module{
+    padding: 1vh 1vh;
+}
+#PM255-Trend-Analysis,#Noise-Index-Analysis{
+    width: 33.333333vh;
+    height: 29.629629vh;
+    display: inline-block;
+}
+#PM255-Trend-Analysis{
+    float: left;
+}
+#Noise-Index-Analysis{
+    float: right;
+}
+.AQIIndexConstructionSite{
+    padding: 4.629629vh 2.314814vh;
+}
+.AQIIndexConstructionSite table{
+    width:38.425925vh;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1.296296vh;
+    border-collapse: initial;
+    
+}
+.AQIIndexConstructionSite table td{
+    width:12.77777vh;
+    height:2.777777vh;
+    font-family:'PingFangSC_Light';
+}
+.AQIIndexConstructionSite table tbody>tr:first-child{
+    background: #5ba55e;
+}
+.AQIIndexConstructionSite table tbody>tr:nth-child(2){
+    background: #abac34;
+}
+.AQIIndexConstructionSite table tbody>tr:nth-child(3){
+    background: #af7823;
+}
+.AQIIndexConstructionSite table tbody>tr:nth-child(4){
+    background: #a63239;
+}
+.AQIIndexConstructionSite table tbody>tr:nth-child(5){
+    background: #672376;
+}
+.AQIIndexConstructionSite table tbody>tr:last-child{
+    background: #553e31;
+}

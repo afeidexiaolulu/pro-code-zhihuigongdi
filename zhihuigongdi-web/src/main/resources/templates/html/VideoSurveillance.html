@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/indexStatic/layui/css/layui.css"  media="all">
+		<link rel="stylesheet" type="text/css" href="/indexStatic/css/index.css"/>
+        <link rel="stylesheet" type="text/css" href="/indexStatic/css/VideoSurveillance.css"/>
+        <script src="/indexStatic/js/base.js"></script>
+        <script src="/indexStatic/js/jquery-1.8.2.min.js"></script>
+        <style>
+            .layui-form-item{display: inline-block;width: 100%;}
+            .layui-form-label{width: 30%;}
+            .layui-input-block{width: 70%;float:left;margin-left: 0;}
+            #opinfo{color: #FFF;}
+        </style>
+    </head>
+    <body>
+        <div id="VideoSurveillance">
+            <div class="VideoSurveillance_1">
+                <div class="rise">
+                    <i></i>
+                    <span>全景视频监控</span>
+                </div>
+                <div class="plugin" id="divPlugin">
+
+                </div>
+            </div>
+            <div  class="VideoSurveillance_2">
+                <div>
+                    <p>监控显示样式调整</p>
+                    <div id='MonitoringStyle'>
+                        <table  class="fourstyle" onClick="changeWndNum(6)">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <table  class="twostyle" onClick="changeWndNum(4)">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <table  class="onestyle" onClick="changeWndNum(2)">
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <p>画面清晰度调节</p>
+                    <!-- <input type="range" id="range" min="0" max="100" step="0" onchange="b.value=this.value"/> -->
+                    <div  class="demo-slider">
+                        <!-- onmousedown="PTZZoomout()" onmouseup="PTZZoomStop()" -->
+                        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm leftButton" onmousedown="PTZZoomout()" onmouseup="PTZZoomStop()"><i class="layui-icon"></i></button>
+                        <div id="range"></div>
+                        <!-- onmousedown="PTZZoomIn()" onmouseup="PTZZoomStop()" -->
+                        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm rightButton"  onmousedown="PTZZoomIn()" onmouseup="PTZZoomStop()"><i class="layui-icon"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>历史回放</p>
+                    <div id="HistoricalPlayback">
+                        <div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">开始时间：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" autocomplete="off" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d %H:%m:{%s-2}'})" id="starttime" class="input-text Wdate layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">结束时间：</label>
+                                <div class="layui-input-block">
+                                    <input type="text" autocomplete="off" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'starttime\')}',maxDate:'%y-%M-%d %H:%m:{%s-1}'})" id="endtime" class="input-text Wdate layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="operation">
+                            <button type="button" class="layui-btn layui-btn-normal" onclick="clickStartPlayback();">开始回放</button>
+                            <button type="button" class="layui-btn layui-btn-normal" onclick="StopPlaybackStartRealPlay();">停止回放</button>
+                        </div>
+                        <!--<div class="operation">-->
+                            <!--<button type="button" class="layui-btn layui-btn-normal" onclick="clickPause();">暂停</button>-->
+                            <!--<button type="button" class="layui-btn layui-btn-normal" onclick="clickResume();">恢复</button>-->
+                            <!--<button type="button" class="layui-btn layui-btn-normal" onclick="clickLogout();">退出</button>-->
+                        <!--</div>-->
+                        <!--<div class="operation">-->
+                            <!--<button type="button" class="layui-btn layui-btn-normal" onclick="clickPlaySlow();">慢放</button>-->
+                            <!--<button type="button" class="layui-btn layui-btn-normal" onclick="clickPlayFast();">快放</button>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div style="display: none;">
+            <div class="left">
+                <fieldset class="login">
+                    <legend>登录</legend>
+                    <table cellpadding="0" cellspacing="3" border="0">
+
+                        <tr>
+                            <td class="tt">已登录设备</td>
+                            <td>
+                                <select id="ip" class="sel" onchange="getChannelInfo();getDevicePort();"></select>
+                            </td>
+                            <td class="tt">通道列表</td>
+                            <td>
+                                <select id="channels" class="sel"></select>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset class="ipchannel">
+                    <legend>数字通道</legend>
+                    <table width="100%" cellpadding="0" cellspacing="3" border="0">
+                        <tr>
+                            <td><input type="button" class="btn" value="获取数字通道列表" onclick="clickGetDigitalChannelInfo();" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="digitaltdiv">
+                                    <table id="digitalchannellist" class="digitalchannellist" cellpadding="0" cellspacing="0" border="0"></table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset class="operate">
+                    <legend>操作信息</legend>
+                    <div id="opinfo" class="opinfo"></div>
+                </fieldset>
+                <fieldset class="callback">
+                    <legend>事件回调信息</legend>
+                    <div id="cbinfo" class="cbinfo"></div>
+                </fieldset>
+            </div>
+            <div class="left">
+                <fieldset class="preview">
+                    <legend>预览</legend>
+                    <table cellpadding="0" cellspacing="3" border="0">
+                        <tr>
+                            <td class="tt">码流类型</td>
+                            <td>
+                                <select id="streamtype" class="sel">
+                                    <option value="1">主码流</option>
+                                    <option value="2">子码流</option>
+                                    <option value="3">第三码流</option>
+                                    <option value="4">转码码流</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="button" class="btn" value="开始预览" onclick="StopPlaybackStartRealPlay();" />
+                                <input type="button" class="btn" value="停止预览" onclick="clickStopRealPlay();" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">
+                                <input type="button" class="btn2" value="启用电子放大" onclick="clickEnableEZoom();" />
+                                <input type="button" class="btn2" value="禁用电子放大" onclick="clickDisableEZoom();" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset class="playback">
+                    <legend>回放</legend>
+                    <table width="100%" cellpadding="0" cellspacing="3" border="0">
+                        <tr>
+                            <td class="tt">码流类型</td>
+                            <td>
+                                <select id="record_streamtype" class="sel">
+                                    <option value="1">主码流</option>
+                                    <option value="2">子码流</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input id="transstream" type="checkbox" class="vtop" />&nbsp;启用转码码流
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+        <link rel="stylesheet" href="/indexStatic/demo/demo.css">
+        <script src="/indexStatic/demo/codebase/webVideoCtrl.js"></script>
+        <script src="/indexStatic/demo/cn/demo.js"></script>
+        <script src="/indexStatic/layui/layui.all.js" charset="utf-8"></script>
+        <script>
+            layui.use('slider', function(){
+                var $ = layui.$
+                ,slider = layui.slider;
+                value_chushi = "0";
+                sliderVlaue = slider.render({
+                    elem: '#range'
+                    ,value: 0 //初始值
+                    ,theme: '#c602ff' //主题色
+                    ,min: 1 //最小值
+                    ,max: 5 //最大值
+                    // ,disabled: true
+                    ,setTips: function(value){ //自定义提示文本
+                        // return value + '倍';
+                        return value;
+                    }
+                });
+            });
+        </script>
+	</body>
+</html>

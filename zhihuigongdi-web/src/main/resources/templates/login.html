@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <title>中冶研究院工地管理系统</title>
+    <meta name="keywords" content="中冶管理">
+    <meta name="description" content="权限管理系统 ">
+    <link href="css/bootstrap.min.css"  rel="stylesheet"/>
+    <link href="css/font-awesome.min.css"  rel="stylesheet"/>
+    <link href="css/style.css"  rel="stylesheet"/>
+    <link href="css/login.min.css" rel="stylesheet"/>
+    <link href="ruoyi/css/ry-ui.css"  rel="stylesheet"/>
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <link rel="shortcut icon" href="../../static/favicon.ico" th:href="@{favicon.ico}"/>
+    <style type="text/css">label.error { position:inherit;  }</style>
+    <script>
+        if(window.top!==window.self){window.top.location=window.location};
+    </script>
+</head>
+
+<body class="signin">
+
+    <div class="signinpanel">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="signin-info">
+                    <div class="logopanel m-b">
+                    </div>
+                    <div class="m-b"></div>
+                    <h4>欢迎使用 <strong>中冶工地后台管理系统</strong></h4>
+                    <ul class="m-b">
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <form id="signupForm">
+                    <h4 class="no-margins">登录：</h4>
+                    <p class="m-t-md">请输入用户名和密码</p>
+                    <input type="text"  id="loginacct"   name="loginacct" class="form-control uname"     placeholder="用户名" />
+                    <input type="password" id="password" name="password" class="form-control pword"     placeholder="密码"  />
+                    <div class="checkbox-custom">
+				    </div>
+                    <a class="btn btn-success btn-block" onclick="dologin()" data-loading="正在验证登录，请稍后...">登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- 全局js -->
+<script src="/js/jquery.min.js" ></script>
+<script src="/js/bootstrap.min.js" ></script>
+<script src="/js/layer/layer.js"></script>
+<script src="/js/myLogin.js"></script>
+</body>
+</html>

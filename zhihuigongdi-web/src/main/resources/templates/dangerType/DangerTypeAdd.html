@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="stylesheet" href="/thy/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/thy/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/thy/css/main.css">
+	<link rel="stylesheet" href="/thy/css/doc.min.css">
+	<style>
+	.tree li {
+        list-style-type: none;
+		cursor:pointer;
+	}
+	</style>
+  </head>
+
+  <body>
+
+    <nav th:replace="adminIndex::navId" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+			<div class="tree" th:insert="adminIndex::daohang">
+					</li>
+					<li class="list-group-item tree-closed">
+						<span><i class="glyphicon glyphicon-ok"></i> 危险预警类型管理 <span class="badge" style="float:right">1</span></span>
+						<ul style="margin-top:10px;display:none;">
+							<li style="height:30px;">
+								<a href="/admin/toDangerType"><i class="glyphicon glyphicon-check"></i> 危险类型管理 </a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<ol class="breadcrumb">
+				  <li><a href="#">首页</a></li>
+				  <li><a href="#">数据列表</a></li>
+				  <li class="active">新增</li>
+				</ol>
+			<div class="panel panel-default">
+              <div class="panel-heading">表单数据<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
+			  <div class="panel-body">
+				<form role="form">
+				  <div class="form-group">
+					<label for="serialNumber">危险预警类型</label>
+					<input type="text" class="form-control" id="dangerType" placeholder="请输入预警类型">
+				  </div>
+				  <button type="button" class="btn btn-success" onclick="DangerTypeAdd()"><i class="glyphicon glyphicon-plus"></i> 新增完成</button>
+				  <button type="button" class="btn btn-danger" onclick="DangerTypeAddAnd()"><i class="glyphicon glyphicon-refresh"></i> 继续新增</button>
+				</form>
+			  </div>
+			</div>
+        </div>
+      </div>
+    </div>
+    <script src="/thy/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/thy/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/thy/script/docs.min.js"></script>
+	<script src="/thy/jquery/layer/layer.js"></script>
+	<script src="/js/DangerTypeAdd.js"></script>
+  </body>
+</html>

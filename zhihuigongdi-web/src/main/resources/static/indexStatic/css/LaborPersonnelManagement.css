@@ -1,0 +1,137 @@
+#PartyBuildingColumn{
+    width:100%;
+}
+#LaborUnit,#AgeOfWorkers,#LaborTechnicalLevel,#DangerAlarm,#NumberWorkersToday,#BlacklistRepository{
+    width:44.444444vh;
+    height:20.370370vh;
+    border: 1px solid #114976;
+    
+}
+#LabourServices_one .one{
+    margin-bottom: 3.25vh;
+}
+#LabourServices_three .three{
+    margin-bottom: 3.29vh;
+}
+#LabourServices_three .three:first-child{
+    position: relative;
+}
+#DangerAlarmButton{
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+}
+#DangerAlarmButton input[type='button']{
+    background-color: #2752a7;
+    border-color: #2752a7;
+    color: #9fceff;
+    padding: .5vh 1vh;
+}
+#LabourServices_one,#LabourServices_two,#LabourServices_three{
+    display: inline-block;
+}
+#LabourServices_one{
+    width:44.444444vh;
+    float: left;
+}
+#LabourServices_two{
+    width: 74.074074vh;
+    float: left;
+    margin:0 3vh;
+}
+#LabourServices_two img{
+    width:100%;
+}
+#LabourServices_three{
+    width:44.444444vh;
+    float: right;
+}
+#DangerAlarm,#NumberWorkersToday{
+    /* padding: 2.962962vh; */
+    padding: 5.259259vh;
+}
+#DangerAlarm p{
+    color: #9fceff;
+    font-size: 1.203703vh;
+    font-family:'PingFangSC_Light';
+    margin: 0;
+    padding: 1.4444444vh 0;
+    border-bottom: 1px dotted #114976;
+}
+#DangerAlarm p>span,#NumberWorkersToday p>span{
+    padding-right: 1vh;
+}
+#DangerAlarm p:first-child{
+    padding-top: 0;
+}
+#DangerAlarm p:last-child{
+    border-bottom:none;
+}
+
+#NumberWorkersToday p{
+    color: #9fceff;
+    font-size: 1.203703vh;
+    font-family:'PingFangSC_Light';
+    margin: 0;
+    padding: 1.111111vh 0;
+    border-bottom: 1px dotted #114976;
+}
+#NumberWorkersToday p:first-child{
+    padding-top: 0;
+}
+#NumberWorkersToday p:last-child{
+    border-bottom:none;
+}
+
+#BlacklistRepository{
+    padding: 1.851851vh 2.5vh;
+}
+#BlacklistRepository div{
+    height: 16.9444vh;
+    position: relative;
+    overflow: hidden;
+}
+.BlacklistRepositoryTable{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.203703vh;
+}
+.BlacklistRepositoryTable tr{
+    width: 100%;
+    /* padding: .5vh; */
+    border-bottom: 0.052083vw solid #0e2c6a;
+}
+.BlacklistRepositoryTable tr:last-child{
+    border-bottom: none;
+}
+.BlacklistRepositoryMember tr:nth-child(odd) {
+    background: #14429d;
+    color: #9fceff;
+}
+.BlacklistRepositoryMember tr:nth-child(even) {
+    background: #2752a7;
+    color: #ffffff;
+}
+.BlacklistRepositoryMember td{
+    padding: 0.33vh 0;
+}
+.BlacklistRepositoryMember tr > td:first-child{
+    width: 4.629629vh;
+    text-align: center;
+}
+.BlacklistRepositoryMember tr > td:nth-child(2){
+    width: 2.777777vh;
+    text-align: center;
+}
+.BlacklistRepositoryMember tr > td:nth-child(3){
+    width: 15.5vh;
+}
+.BlacklistRepositoryMember tr > td:last-child{
+    width: 17.833333vh;
+}
+.BlacklistRepositoryMember{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

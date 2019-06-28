@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.zhihuigongdi.dao.DangerWarningMapper">
+    <!---查询在册人员表中各单位人数-->
+    <insert id="addDanderWarningBatch" parameterType="list">
+        insert into t_dangerwarning(type_, number_, create_time_)
+        values
+        <foreach collection="dangerWarnings" item="dW" separator="," >
+            (#{dW.type}, #{dW.num}, #{dW.createTime})
+        </foreach>
+    </insert>
+
+    <select id="selectLastCreateTime" resultType="java.util.Date">
+        select create_time_ from t_dangerwarning order by create_time_ desc limit 1
+    </select>
+
+</mapper>

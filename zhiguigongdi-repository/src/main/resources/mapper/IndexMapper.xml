@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.zhihuigongdi.dao.IndexMapper">
+    <!---查询在册人员表中各单位人数-->
+    <select id="queryAnalysisOfTheCompanyToWhichTheRegisteredOperatorsBelongList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+      SELECT
+        IFNULL(BELONG_COMPANY_,'未知') AS TYPE,
+        COUNT( * ) AS NUMBER
+      FROM
+        T_REGISTEREDPERSONNEL
+      WHERE
+        STATU_ = '激活'
+      GROUP BY
+        BELONG_COMPANY_
+    </select>
+
+    <!---查询在册人员表中总人数-->
+    <select id="countRegisteredpersonnel" resultType="java.lang.Integer">
+      SELECT
+        COUNT( * )
+      FROM
+        T_REGISTEREDPERSONNEL
+      WHERE
+        STATU_ = '激活'
+    </select>
+
+    <!--查询在册人员各技术等级人数-->
+    <select id="queryanalysisOfTechnicalLevelOfRegisteredPersonnelList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+      SELECT
+        IFNULL(TECHNICAL_GRADE_,'未知') AS TYPE,
+        COUNT( * ) AS NUMBER
+      FROM
+        T_REGISTEREDPERSONNEL
+      WHERE
+        STATU_ = '激活'
+      GROUP BY
+        TECHNICAL_GRADE_
+    </select>
+
+    <!--查询在册人员年龄段统计-->
+    <select id="queryAgeStatisticsOfRegisteredPersonnelList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+        SELECT
+          AGE_ AS TYPE,
+          COUNT( * ) AS NUMBER
+        FROM
+        (
+          SELECT
+            CASE
+                WHEN
+                  AGE_ &gt;= 20 AND AGE_ &lt; 30 THEN '20-30岁'
+                WHEN
+                  AGE_ &gt;= 30 AND AGE_ &lt; 40 THEN '30-40岁'
+                ELSE '其他年龄段'
+            END AS AGE_
+          FROM
+            T_REGISTEREDPERSONNEL
+          WHERE
+            STATU_ = '激活'
+        ) A
+        GROUP BY
+          AGE_
+    </select>
+
+    <!--查询危险报警各类别数量(当日)-->
+    <select id="queryDangerAlarmList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+      SELECT
+        TYPE_ AS TYPE,
+        NUMBER_ AS NUMBER
+      FROM
+        T_DANGERWARNING
+      WHERE
+        DATE_FORMAT(CREATE_TIME_,'%Y-%m-%d') = DATE_FORMAT(NOW(),'%Y-%m-%d')
+    </select>
+
+    <!--查询危险报警各类别数量(累计)-->
+    <select id="queryDangerAlarmTotalList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+      SELECT
+        TYPE_ AS TYPE,
+        SUM(NUMBER_) AS NUMBER
+      FROM
+        T_DANGERWARNING
+      GROUP BY
+        TYPE_
+    </select>
+
+    <!--查询中冶黑名单人员库-->
+    <select id="queryBlackList" resultType="com.zy.zhihuigongdi.bean.RegisteredPersonnel">
+      SELECT
+        ID_ AS ID,
+        NAME_ AS NAME,
+        IFNULL(SEX_,'未知') AS SEX,
+        IFNULL(IDENTITY_NUMBER_,'未知') AS IDENTITYNUMBER,
+        IFNULL(BELONG_COMPANY_,'未知') AS BELONGCOMPANY
+      FROM
+        T_REGISTEREDPERSONNEL
+      WHERE
+        STATU_ = '黑名单'
+    </select>
+
+    <!--今日作业人数-->
+    <select id="queryNumberOfPeopleWorkingTodayList" resultType="com.zy.zhihuigongdi.bean.IndexBeam">
+      SELECT
+            COUNT( * ) AS NUMBER,
+            IFNULL( DEPARTMENT_, '未知' ) AS TYPE
+        FROM
+            T_TODAYOPERATOR
+        WHERE
+            DATE_FORMAT( TIME_, '%Y-%m-%d' ) = DATE_FORMAT(NOW(),'%Y-%m-%d')
+            AND IS_PASS_ = '1'
+            AND INSTR( PLACE_, '进门' )
+        GROUP BY
+            DEPARTMENT_
+    </select>
+
+    <!--获取监控信息-->
+    <select id="getMonitoringInfo" resultType="java.util.Map">
+      SELECT
+        *
+      FROM
+        t_monitoringinfo
+      WHERE
+        ID_ = '1'
+    </select>
+
+    <!--更新安全生产天数及项目名称-->
+    <update id="updateDaysOfSafetyInProduction" parameterType="java.lang.String">
+      UPDATE t_monitoringinfo
+        SET port_ = #{newDay}
+      WHERE
+        ID_ = #{id}
+    </update>
+
+
+</mapper>

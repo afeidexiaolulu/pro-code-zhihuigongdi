@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="stylesheet" href="/thy/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/thy/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/thy/css/main.css">
+	<style>
+	.tree li {
+        list-style-type: none;
+		cursor:pointer;
+	}
+	table tbody tr:nth-child(odd){background:#F4F4F4;}
+	table tbody td:nth-child(even){color:#C00;}
+	</style>
+  </head>
+
+  <body>
+    <nav th:replace="adminIndex::navId" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+			<div class="tree" th:insert="adminIndex::daohang">
+			</div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 数据列表</h3>
+			  </div>
+			  <div class="panel-body">
+<form class="form-inline" role="form" style="float:left;">
+        <table class="table  table-bordered">
+            <thead>
+            <tr>
+                <th class="input-group-addon">查询条件</th>
+                <th  width="30"><input type="text" placeholder="姓名" id="nameId"></th>
+                <th  width="30"><input type="text" placeholder="身份证" id="identityId"></th>
+                <th  width="30"><input type="text" placeholder="所属公司" id="companyId"></th>
+                <th  width="30"><input type="text" placeholder="技术等级" id="techId"></th>
+                <th><button id="queryRBtn" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button></th>
+            </tr>
+            </thead>
+        </table>
+        <br>
+</form>
+<button type="button" class="btn btn-danger" style="float:right;margin-left:10px;" id="delRegPersonnelBatch"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
+<button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='/admin/toRegPersonnelAdd'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+<br>
+ <hr style="clear:both;">
+          <div class="table-responsive">
+            <table class="table  table-bordered">
+              <thead>
+                <tr align="center">
+                  <th align="center" width="30">#</th>
+				  <th align="center" width="30"><input type="checkbox" id="checkId"></th>
+                  <th align="center">员工编号</th>
+                  <th align="center">姓名</th>
+				  <th align="center">性别</th>
+				  <th align="center">年龄</th>
+				  <th align="center">身份证号</th>
+				  <th align="center">手机号码</th>
+				  <th align="center">所属公司</th>
+				  <th align="center">技术等级</th>
+				  <th align="center">在职状态</th>
+                  <th align="center" width="100">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+			  <tfoot>
+				 <tr >
+					 <td colspan="13" align="center">
+						 <ul class="pagination"></ul>
+					 </td>
+				 </tr>
+
+			  </tfoot>
+            </table>
+          </div>
+			  </div>
+			</div>
+    <script src="/thy/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/thy/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/thy/script/docs.min.js"></script>
+	<script src="/thy/jquery/layer/layer.js"></script>
+    <script src="/js/RegPersonnel.js"></script>
+  </body>
+</html>

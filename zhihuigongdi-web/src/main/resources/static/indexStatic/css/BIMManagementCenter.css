@@ -1,0 +1,59 @@
+.BIMManagementCenter_1{
+    width: 118.518518vh;
+    height: 68.333333vh;
+    float: left;
+    
+}
+.BIMManagementCenter_3{
+    width: 47.222222vh;
+    float: right;
+    
+}
+.BIMManagementCenter_New_div{
+    height: 68.333333vh;
+    position: relative;
+}
+.BIMManagementCenter_New_div img{
+    width: 118.518518vh;
+    border: 1px solid #3c99dc;
+}
+#BIMManagementCenter_Leader_div{
+    border: 1px solid #114976;
+    padding: 5.555555vh;
+    height: 68.333333vh;
+    font-size: 1.333333vh;
+    color: #9fceff;
+}
+
+#BIMManagementCenter_Leader_div p{
+    font-family:'PingFangSC_Light';
+    color: #9fceff;
+    margin:0;
+    padding: 1.388888vh 0;
+    border-bottom: 1px dotted #0858a6;
+}
+#BIMManagementCenter_Leader_div p:last-child{
+    border-bottom: none;
+}
+.BIMManagementCenter_2  ul{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+}
+.BIMManagementCenter_2  ul li{
+    width: 16.851851vh;
+    height: 4.166666vh;
+    background: #2350ac;
+    border: 1px solid #0783ee;
+    color: #FFFFFF;
+    float: left;
+    margin-left: 3.455555vh;
+    font-size: 1.851851vh;
+    font-family:'PingFangSC_Light';
+    text-align: center;
+    line-height: 4.166666vh;
+}
+.BIMManagementCenter_2  ul li:first-child{
+    margin-left: 0;
+}

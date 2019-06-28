@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="stylesheet" href="/thy/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/thy/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/thy/css/main.css">
+	<link rel="stylesheet" href="/thy/css/doc.min.css">
+	<style>
+	.tree li {
+        list-style-type: none;
+		cursor:pointer;
+	}
+	</style>
+  </head>
+
+  <body>
+
+    <nav th:replace="adminIndex::navId"  class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+			<div class="tree" th:insert="adminIndex::daohang">
+			</div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<ol class="breadcrumb">
+					<li><a href="/admin/toAdminIndex">首页</a></li>
+					<li class="active">更新</li>
+				</ol>
+			<div class="panel panel-default">
+              <div class="panel-heading">表单数据<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
+			  <div class="panel-body">
+				<form role="form">
+                    <div class="form-group">
+                        <input type="text" hidden id="id" value="3" >
+                    </div>
+				  <div class="form-group">
+					<label for="SafetyTimeID">现项目名称</label>
+					<input type="text" class="form-control" id="projectNameID" th:value="${projectName }" readonly>
+				  </div>
+				  <div class="form-group">
+					<label for="safetyTimeUpdate">修改项目名称</label>
+					<input type="text" class="form-control" id="projectNameUpdate"  placeholder="请输入最新项目名称">
+				  </div>
+				  <button type="button" class="btn btn-success" onclick="SafetyTimeUpdate()"><i class="glyphicon glyphicon-plus"></i> 更新 </button>
+				</form>
+			  </div>
+			</div>
+        </div>
+      </div>
+    </div>
+    <script src="/thy/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/thy/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/thy/script/docs.min.js"></script>
+	<script src="/thy/jquery/layer/layer.js"></script>
+	<script src="/js/ProjectNameUpdate.js"></script>
+  </body>
+</html>
